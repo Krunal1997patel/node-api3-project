@@ -3,11 +3,13 @@ const helmet = require('helmet');
 const server = express();
 
 const userRoute = require('./users/userRouter.js');
+const postRoute = require('./posts/postRouter.js');
 
 server.use(helmet());
 server.use(logger);
 
 server.use('/api/users', userRoute);
+server.use('/api/posts', postRoute);
 
 
 server.get('/', (req, res) => {

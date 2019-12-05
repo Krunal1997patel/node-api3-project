@@ -28,7 +28,7 @@ router.post('/:id/posts', validateUserId, validatePost, (req, res) => {
   // do your magic!
   // const body = req.body;
 
-  postDatabass.insert({ text: req.body.text, user_id: req.paramsrs.id})
+  postDatabass.insert({ text: req.body.text, user_id: req.params.id})
   .then(newPost => {
     res.status(201).json(newPost)
   })
